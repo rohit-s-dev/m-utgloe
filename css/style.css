@@ -1,0 +1,211 @@
+/* Colors, Font Families Variables*/
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+:root {
+    /* Colors */
+    --primary-color: rgb(46, 161, 252);
+    --primary-light-color: rgb(120, 199, 255);
+    --primary-dark-color: rgb(36, 159, 255);
+    --secondary-color: rgb(22, 67, 106);
+    
+    /* Font Families */
+    --main-font-family: 'Montserrat Alternates', sans-serif;
+    --secondary-font-family: 'Open Sans', sans-serif;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--main-font-family),  var(--secondary-font-family);
+    background: rgb(250, 250, 250);
+}
+.u_btn {
+    border: none;
+    padding: .5rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: var(--secondary-font-family);
+    font-weight: 600;
+
+    position: relative;
+
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+
+    overflow: hidden;
+    z-index: 1;
+
+    transition: all .5s ease;
+}
+
+.u_btn_primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.w_100 {
+    width: 100%;
+}
+
+.u_btn::after {
+    position: absolute;
+    width: 0%;
+    top: 0;
+    left: 0;
+    background: var(--secondary-color);
+    height: 100%;
+    content: '';
+    z-index: -1;
+    transition: all .5s cubic-bezier(.76,.19,0,1.02);
+    transform-origin: left;
+}
+
+.u_btn:hover::after {
+    width: 100%;
+}
+
+.u_btn:hover {
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+
+    transform: translateY(-5px);
+    outline: none;
+    border: none;
+}
+
+.u_btn:active {
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+
+    transform: translateY(3px);
+    outline: none;
+    border: none;
+}
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Hero Header */
+.hero_header {
+    background: linear-gradient(to right bottom, rgba(80, 97, 211, 0.9), rgba(43, 188, 255, 0.8)), url(https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+
+.main_nav {
+    padding: 1.5rem 0;
+}
+
+.main_nav .navbar-brand {
+    color: white;
+    font-family: var(--main-font-family);
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.main_nav ul li {
+    font-family: var(--main-font-family);
+    font-weight: 500;
+    position: relative;
+    padding: 1rem 0;
+    cursor: pointer;
+}
+
+.main_nav ul li:not(:last-child) {
+    margin-right: 1.5rem;
+}
+
+.main_nav ul li a {
+    color: #fff;
+}
+
+.main_nav ul li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main_nav ul li::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    transition: all .5s cubic-bezier(.76,.19,0,1.02);
+    origin
+}
+
+.main_nav ul li:hover::before {
+    width: 100%;
+    transform-origin: center;
+}
+
+/* Header Section */
+.header_section {
+    margin-top: 3rem;
+}
+
+/* Header Highlighted Box */
+
+.header_highlight_box {
+
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.header_highlight_box--title {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.header_highlight_box  p {
+    color: rgb(224, 224, 224);
+    font-weight: 400;
+    font-family: var(--secondary-font-family);
+}
+
+
+/* Header Form */
+.header_form {
+    display: flex;
+    justify-content: center;
+}
+
+.form_card {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    width: 60%;
+    border-radius: 10px;   
+    -webkit-box-shadow: 0px 2px 20px 2px rgba(0,0,0,0.14);
+    -moz-box-shadow: 0px 2px 20px 2px rgba(0,0,0,0.14);
+    box-shadow: 0px 2px 20px 2px rgba(0,0,0,0.14);
+}
+
+.form_card .form_card_title {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form_card input {
+    padding: 1.15rem;
+    border-radius: 12px;
+    font-family: var(--main-font-family);
+    font-weight: 500;
+}
+
+.form_card input::placeholder {
+    font-family: var(--secondary-font-family);
+    font-weight: 500;
+    color: rgb(182, 182, 182);
+}
